@@ -1,0 +1,28 @@
+.header {
+  width: 100%;
+  background-color: #553333;
+  height: 60px;
+  display: flex;
+  vertical-align: middle;
+  align-items: center;
+  justify-content: space-between;
+
+  .logo {
+    color: white;
+    margin-left: 20px;
+    width: fit-content;
+
+    .logo-text {
+      font-size: 18px;
+    }
+  }
+  
+  .fight-button {
+    margin-right: 5px;
+    height: 50px;
+    padding: 10px;
+    font-size: 16px;
+  }
+}
+
+

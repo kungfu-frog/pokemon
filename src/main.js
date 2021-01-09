@@ -3,13 +3,12 @@ import ReactDOM from 'react-dom'
 import createStore from './store/createStore'
 import { Router } from 'react-router-dom'
 import { Provider } from 'react-redux'
-import { createBrowserHistory } from 'history';
+import history from './utils/history';
 import './styles/main.scss'
 
 // Store Initialization
 // ------------------------------------
-const store = createStore(window.__INITIAL_STATE__)
-const history = createBrowserHistory();
+const store = createStore(window.__INITIAL_STATE__);
 
 // Render Setup
 // ------------------------------------
@@ -50,8 +49,7 @@ if (__DEV__) {
 
     // Setup hot module replacement
     module.hot.accept([
-      './components/App',
-      './routes/index',
+      './App'
     ], () =>
       setImmediate(() => {
         ReactDOM.unmountComponentAtNode(MOUNT_NODE)

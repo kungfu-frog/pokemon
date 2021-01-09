@@ -25,6 +25,11 @@ class SearchPage extends React.Component {
 
   handleClickOutside = () => {
     this.setState({ show_inspect: false });
+    this.props.select_pokemon({});
+  }
+  
+  handleEvolutionClicked = (id) => {
+    this.props.fetchPokemon(id);
   }
 
   render() {
@@ -53,7 +58,7 @@ class SearchPage extends React.Component {
             )}
           </div>
         </div>
-        <Inspect pokemon={selected_pokemon} onClickOutside={this.handleClickOutside} visible={show_inspect}/>
+        <Inspect pokemon={selected_pokemon} onClickOutside={this.handleClickOutside} visible={show_inspect} onEvolutionClicked={this.handleEvolutionClicked}/>
       </div>
     );
   }
@@ -67,7 +72,8 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   fetchPokemons: cnt => dispatch(fetch_pokemons(cnt)),
-  fetchPokemon: id => dispatch(fetch_pokemon(id))
+  fetchPokemon: id => dispatch(fetch_pokemon(id)),
+  select_pokemon: pokemon => dispatch(select_pokemon(pokemon))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(SearchPage);

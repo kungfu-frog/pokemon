@@ -1,8 +1,9 @@
-import { SET_POKEMONS } from '../pages/SearchPage/action';
+import { SET_POKEMONS, SELECT_POKEMON, SET_LOADING } from '../pages/SearchPage/action';
 
 const initialState = {
   pokemons: [],
-  selected_pokemon: {}
+  selected_pokemon: {},
+  loading: false
 };
 
 const DexReducer = (state = initialState, action) => {
@@ -13,7 +14,16 @@ const DexReducer = (state = initialState, action) => {
         return { ...state, pokemons: [...payload] };
       return state;
     }
-    
+    case SELECT_POKEMON: {
+      if (payload !== null)
+        return { ...state, selected_pokemon: {...payload} };
+      return state;
+    }
+    case SET_LOADING: {
+      if (payload !== null)
+        return { ...state, loading: payload};
+      return state;
+    }
     default: {
       return state;
     }

@@ -1,0 +1,75 @@
+.inspection-view {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  .background {
+    background-color: black;
+    opacity: 0.8;
+    width: calc(100% - 250px);
+  }
+  .inspect {
+    background-color: white;
+    width: 250px;
+    padding: 15px;
+    height: 100%;
+    overflow: scroll;
+    .pokemon-name {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+    .pokemon-image {
+      position: relative;
+      width: 100%;
+      padding: 37.5% 0;
+      border: 1px solid grey;
+      border-radius: 5%;
+      div {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+        }
+      }
+    }
+    h4{
+      margin-bottom: 10px;
+    }
+    .characteristics {
+      margin: 0;
+      padding-left: 15px;
+      list-style-type: '- ';
+      li {
+        margin-bottom: 10px;
+        .characteristic-title {
+          margin-bottom: 5px;
+          font-size: 18px;
+        }
+      }
+    }
+    .evolutions {
+      width: 100%;
+      .evolution {
+        width: 33.33333%;
+        padding: 5px;
+        display: inline-block;
+      }
+    }
+  }
+  z-index: 1000;
+}
+.tag {
+  display: inline-block;
+  padding: 3px;
+  background-color: greenyellow;
+  margin-right: 5px;
+  border: 1px solid grey;
+  border-radius: 4px;
+  margin-bottom: 5px;;
+}
